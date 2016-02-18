@@ -1,0 +1,9 @@
+---
+points: 4
+compare_responses: true
+requests:
+  - request: "http://localhost:8080/assignment1/austinsocialmedia?account_name=AE&type=NONEXISTENT"
+    response_expected:
+      type: "plain"
+      value: |
+        Disallowed value specified for parameter type
