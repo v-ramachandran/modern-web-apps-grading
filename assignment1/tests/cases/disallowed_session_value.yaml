@@ -1,3 +1,4 @@
+# Test that using a session value of "foo", an invalid value, will return the expected disallowed value message.
 ---
 points: 4
 compare_responses: true
