@@ -1,0 +1,12 @@
+# Test that requesting for the austinanimalcenter account_name retrieves the correct response.
+---
+points: 4
+compare_responses: true
+requests:
+  - request: "/assignment1/austinsocialmedia?account_name=AuStInAnImAlCeNtEr"
+    response_expected:
+      type: "plain"
+      value: |
+        Visited URLs
+        URL Data
+        austinanimalcenter INSTAGRAM https://instagram.com/austinanimalcenter/
