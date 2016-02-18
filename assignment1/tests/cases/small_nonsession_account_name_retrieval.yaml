@@ -3,7 +3,7 @@
 points: 4
 compare_responses: true
 requests:
-  - request: "/assignment1/austinsocialmedia?account_name=AuStInAnImAlCeNtEr"
+  - request: "/assignment1/austinsocialmedia?account_name=austinanimalcenter"
     response_expected:
       type: "plain"
       value: |
