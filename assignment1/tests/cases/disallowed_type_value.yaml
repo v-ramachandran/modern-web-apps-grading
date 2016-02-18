@@ -1,3 +1,4 @@
+# Test that providing a disallowed value for the type parameter results in the disallowed value message.
 ---
 points: 4
 compare_responses: true
