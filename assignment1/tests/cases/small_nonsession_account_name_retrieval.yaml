@@ -1,6 +1,6 @@
 # Test that requesting for the austinanimalcenter account_name retrieves the correct response.
 ---
-points: 4
+points: 5
 goal: test that requesting for the austinanimalcenter account_name retrieves the correct response
 compare_responses: true
 requests:
