@@ -1,0 +1,11 @@
+# Test that providing a disallowed value for the type parameter results in the disallowed value message.
+---
+points: 5
+goal: test that providing a disallowed value for the type parameter results in the disallowed value message.
+compare_responses: true
+requests:
+  - request: "/assignment1/austinsocialmedia?account_name=austintexasgov&type=ALSO_NONEXISTENT"
+    response_expected:
+      type: "plain"
+      value: |
+        Disallowed value specified for parameter type
