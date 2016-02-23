@@ -1,0 +1,15 @@
+# Test that requesting for the account_name aarcatx with retrieves the information for all cases.
+---
+points: 5
+goal: test that requesting for the account_name aarcatx with retrieves the information for all cases
+compare_responses: true
+requests:
+  - request: "/assignment1/austinsocialmedia?account_name=aarcatx"
+    response_expected:
+      type: "plain"
+      value: |
+        Visited URLs
+        
+        URL Data
+        aarcatx TWITTER https://twitter.com/aarcatx
+        AARCATX INSTAGRAM https://instagram.com/aarcatx/
