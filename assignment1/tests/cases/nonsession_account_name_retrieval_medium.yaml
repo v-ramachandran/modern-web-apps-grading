@@ -1,0 +1,19 @@
+# Test that requesting for the AE account_name retrieves the correct response.
+---
+points: 5
+goal: test that requesting for the AE account_name retrieves the correct response
+compare_responses: true
+requests:
+  - request: "/assignment1/austinsocialmedia?account_name=AE"
+    response_expected:
+      type: "plain"
+      value: |
+        Visited URLs
+        
+        URL Data
+        AE PICASA https://picasaweb.google.com/109375518041621306555
+        AE GOOGLE_PLUS https://plus.google.com/+austinenergy/videos
+        AE VIMEO https://vimeo.com/austinenergy
+        AE LINKED_IN https://www.linkedin.com/company/austin-energy
+        AE YOUTUBE https://www.youtube.com/user/AustinEnergyVideos
+        AE YELP http://www.yelp.com/biz/austin-energy-austin
