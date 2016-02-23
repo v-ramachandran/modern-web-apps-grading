@@ -1,0 +1,11 @@
+# Test that using a session value of "bar", an invalid value, will return the expected disallowed value message.
+---
+points: 4
+goal: test that using a session value of 'bar', an invalid value, will return the expected disallowed value message.
+compare_responses: true
+requests:
+  - request: "/assignment1/austinsocialmedia?username=venket&session=bar"
+    response_expected:
+      type: "plain"
+      value: |
+        Disallowed value specified for parameter session
