@@ -1,0 +1,24 @@
+# Test that requests after a session end are not tracked.
+---
+points: 5
+goal: test that requests after a session end are not tracked.
+compare_responses: true
+requests:
+  - request: /assignment1/austinsocialmedia?username=venket&session=begin
+  - request: /assignment1/austinsocialmedia?username=venket&session=end
+  - request: /assignment1/austinsocialmedia?account_name=austintexasgov&type=YOUTUBE
+    response_expected:
+      type: plain
+      value: |
+        Visited URLs
+        
+        URL Data
+        austintexasgov YOUTUBE https://www.youtube.com/user/austintexasgov
+  - request: /assignment1/austinsocialmedia?account_name=AE&type=PICASA
+    response_expected:
+      type: plain
+      value: |
+        Visited URLs
+        
+        URL Data
+        AE PICASA https://picasaweb.google.com/109375518041621306555
