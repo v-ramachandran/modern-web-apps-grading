@@ -1,1 +1,14 @@
-
+# Test that requesting for the AE account_name and PICASA type retrieves the correct response.
+---
+points: 5
+goal: test that requesting for AE account_name and PICASA type retrieves the correct response
+compare_responses: true
+requests:
+  - request: "/assignment1/austinsocialmedia?account_name=AE&type=PICASA"
+    response_expected:
+      type: "plain"
+      value: |
+        Visited URLs
+        
+        URL Data
+        AE PICASA https://picasaweb.google.com/109375518041621306555
