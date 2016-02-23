@@ -1,6 +1,7 @@
 # Test that requesting for an account_name with mixed-casing still retrieves the correct response.
 ---
-points: 4
+points: 5
+goal: test that requesting for an account_name with mixed-casing still retrieves the correct response
 compare_responses: true
 requests:
   - request: "/assignment1/austinsocialmedia?account_name=AuStInAnImAlCeNtEr"
