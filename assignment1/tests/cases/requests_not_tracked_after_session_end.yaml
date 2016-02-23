@@ -5,6 +5,14 @@ goal: test that requests after a session end are not tracked.
 compare_responses: true
 requests:
   - request: /assignment1/austinsocialmedia?username=venket&session=begin
+  - request: /assignment1/austinsocialmedia?account_name=austintexasgov&type=YOUTUBE
+    response_expected:
+      type: plain
+      value: |
+        Visited URLs
+        
+        URL Data
+        austintexasgov YOUTUBE https://www.youtube.com/user/austintexasgov
   - request: /assignment1/austinsocialmedia?username=venket&session=end
   - request: /assignment1/austinsocialmedia?account_name=austintexasgov&type=YOUTUBE
     response_expected:
