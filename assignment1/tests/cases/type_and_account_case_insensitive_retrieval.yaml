@@ -1,0 +1,14 @@
+# Test that requesting for an account_name and type with a specific case still retrieves all of the responses.
+---
+points: 5
+goal: test that requesting for an account_name and type with a specific case still retrieves all of the responses
+compare_responses: true
+requests:
+  - request: "/assignment1/austinsocialmedia?account_name=aarcatx&type=twitter"
+    response_expected:
+      type: "plain"
+      value: |
+        Visited URLs
+        
+        URL Data
+        AARCATX TWITTER https://twitter.com/aarcatx
