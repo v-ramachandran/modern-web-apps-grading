@@ -1,0 +1,22 @@
+# Test that requests are not tracked if a session has not been started.
+---
+points: 5
+goal: test that requests are not tracked if a session has not been started
+compare_responses: true
+requests:
+  - request: /assignment1/austinsocialmedia?account_name=austintexasgov&type=YOUTUBE
+    response_expected:
+      type: plain
+      value: |
+        Visited URLs
+        
+        URL Data
+        austintexasgov YOUTUBE https://www.youtube.com/user/austintexasgov
+  - request: /assignment1/austinsocialmedia?account_name=AE&type=PICASA
+    response_expected:
+      type: plain
+      value: |
+        Visited URLs
+        
+        URL Data
+        AE PICASA https://picasaweb.google.com/109375518041621306555
