@@ -1,6 +1,7 @@
 # Test that providing a disallowed value for the type parameter results in the disallowed value message.
 ---
-points: 4
+points: 5
+goal: test that providing a disallowed value for the type parameter results in the disallowed value message.
 compare_responses: true
 requests:
   - request: "/assignment1/austinsocialmedia?account_name=AE&type=NONEXISTENT"
