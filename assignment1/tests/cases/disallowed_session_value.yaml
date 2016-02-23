@@ -1,6 +1,7 @@
 # Test that using a session value of "foo", an invalid value, will return the expected disallowed value message.
 ---
-points: 4
+points: 5
+goal: test that using a session value of "foo", an invalid value, will return the expected disallowed value message
 compare_responses: true
 requests:
   - request: "/assignment1/austinsocialmedia?username=venket&session=foo"
