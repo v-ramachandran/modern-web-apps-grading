@@ -22,4 +22,14 @@ requests:
         
         URL Data
         AE PICASA https://picasaweb.google.com/109375518041621306555
+  - request: /assignment1/austinsocialmedia?account_name=aarcatx&type=INSTAGRAM
+    response_expected:
+      type: plain
+      value: |
+        Visited URLs
+        http://localhost:8080/assignment1/austinsocialmedia?account_name=austintexasgov&type=YOUTUBE
+        http://localhost:8080/assignment1/austinsocialmedia?account_name=AE&type=PICASA
+        
+        URL Data
+        aarcatx INSTAGRAM https://instagram.com/aarcatx/
   - request: /assignment1/austinsocialmedia?username=venket&session=end
