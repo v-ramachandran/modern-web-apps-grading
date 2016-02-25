@@ -1,0 +1,25 @@
+# Test that request(s) inside a session are tracked.
+---
+points: 5
+goal: test that request(s) inside a session are tracked
+compare_responses: true
+requests:
+  - request: /assignment1/austinsocialmedia?username=venket&session=begin
+  - request: /assignment1/austinsocialmedia?account_name=austintexasgov&type=HOOTSUITE
+    response_expected:
+      type: plain
+      value: |
+        Visited URLs
+        
+        URL Data
+        austintexasgov HOOTSUITE https://hootsuite.com/dashboard
+  - request: /assignment1/austinsocialmedia?account_name=AE&type=PICASA
+    response_expected:
+      type: plain
+      value: |
+        Visited URLs
+        http://localhost:8080/assignment1/austinsocialmedia?account_name=austintexasgov&type=HOOTSUITE
+        
+        URL Data
+        AE PICASA https://picasaweb.google.com/109375518041621306555
+  - request: /assignment1/austinsocialmedia?username=venket&session=end
