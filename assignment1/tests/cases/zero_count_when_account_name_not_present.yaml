@@ -1,0 +1,11 @@
+# Test the accountstats count is correctly returned as zero when provided an account name that doesn't exist.
+---
+points: 5
+goal: test the accountstats count is correctly returned as zero when provided an account name that doesn't exist
+compare_responses: true
+requests:
+  - request: /assignment2/austinsocialmedia?accountstats=AE123
+    response_expected:
+      type: json
+      value: |
+        {"account" : "AE123", "num_of_types": "0"}
