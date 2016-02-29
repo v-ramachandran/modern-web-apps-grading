@@ -4,7 +4,7 @@ points: 5
 goal: test that request(s) inside a session are tracked
 compare_responses: true
 requests:
-  - request: /assignment1/austinsocialmedia?username=venket&session=begin
+  - request: /assignment1/austinsocialmedia?username=venket&session=start
   - request: /assignment1/austinsocialmedia?account_name=austintexasgov&type=HOOTSUITE
     response_expected:
       type: plain
