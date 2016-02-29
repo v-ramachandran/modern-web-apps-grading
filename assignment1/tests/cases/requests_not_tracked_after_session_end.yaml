@@ -4,7 +4,7 @@ points: 5
 goal: test that requests after a session end are not tracked.
 compare_responses: true
 requests:
-  - request: /assignment1/austinsocialmedia?username=venket&session=begin
+  - request: /assignment1/austinsocialmedia?username=venket&session=start
   - request: /assignment1/austinsocialmedia?account_name=austintexasgov&type=YOUTUBE
     response_expected:
       type: plain
