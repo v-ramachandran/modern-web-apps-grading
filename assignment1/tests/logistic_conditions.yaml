@@ -5,5 +5,5 @@ conditions:
     points: -5
     deadline: Sun Feb 14 23:59:59 2016
   startup:
-  - description: "successful application startup"
+    description: "successful application startup"
     points: 20
