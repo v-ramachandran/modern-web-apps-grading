@@ -1,0 +1,8 @@
+---
+late:
+  description: "late submission penalties"
+  points: -5
+  deadline: Sun Feb 14 23:59:59 2016
+start-up:
+  description: "successful application startup"
+  points: 20
