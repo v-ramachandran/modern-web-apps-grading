@@ -1,0 +1,11 @@
+# Test the typestats count is correctly returned when there are multiple instances of the type
+---
+points: 6
+goal: test the typestats count is correctly returned when there are multiple instances of the type
+compare_responses: true
+requests:
+  - request: /assignment2/austinsocialmedia?typestats=TUMBLR
+    response_expected:
+      type: json
+      value: |
+        {"type" : "TUMBLR", "num_of_accounts": "2"}

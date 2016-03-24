@@ -1,0 +1,11 @@
+# Test that the accountstats count is correctly returned when there are entries of different case.
+---
+points: 6
+goal: test that the accountstats count is correctly returned when there are entries of different case
+compare_responses: true
+requests:
+  - request: /assignment2/austinsocialmedia?accountstats=austintexasgov
+    response_expected:
+      type: json
+      value: |
+        {"account" : "austintexasgov", "num_of_types": "9"}

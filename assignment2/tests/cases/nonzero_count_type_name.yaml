@@ -1,0 +1,11 @@
+# Test the typestats count is correctly returned where there is only one instance of the type
+---
+points: 6
+goal: test the typestats count is correctly returned where there is only one instance of the type
+compare_responses: true
+requests:
+  - request: /assignment2/austinsocialmedia?typestats=PICASA
+    response_expected:
+      type: json
+      value: |
+        {"type" : "PICASA", "num_of_accounts": "1"}

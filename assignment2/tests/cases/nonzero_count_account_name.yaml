@@ -1,7 +1,7 @@
-# Test that the accountstats count is correctly returned as one when provided austinanimalcenter as account name.
+# Test that the accountstats count is correctly returned when there is only one type.
 ---
 points: 6
-goal: test that the accountstats count is correctly returned as one when provided austinanimalcenter as account name
+goal: test that the accountstats count is correctly returned when there is only one type
 compare_responses: true
 requests:
   - request: /assignment2/austinsocialmedia?accountstats=austinanimalcenter

@@ -1,0 +1,11 @@
+# Test that the accountstats count returns a response with the account in the original casing.
+---
+points: 6
+goal: test that the accountstats count returns a response with the account in the original casing
+compare_responses: true
+requests:
+  - request: /assignment2/austinsocialmedia?accountstats=aE
+    response_expected:
+      type: json
+      value: |
+        {"account" : "AE", "num_of_types": "6"}

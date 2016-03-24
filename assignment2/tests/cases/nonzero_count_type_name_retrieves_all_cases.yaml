@@ -1,0 +1,11 @@
+# Test the counting of typestats ignores casing
+---
+points: 6
+goal: test the counting of typestats ignores casing
+compare_responses: true
+requests:
+  - request: /assignment2/austinsocialmedia?typestats=pIcAsA
+    response_expected:
+      type: json
+      value: |
+        {"type" : "PICASA", "num_of_accounts": "1"}

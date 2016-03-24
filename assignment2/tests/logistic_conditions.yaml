@@ -8,7 +8,7 @@ conditions:
     description: "successful application startup"
     points: 20
   tests:
-    description: "existence of at least 5 unit test cases"
+    description: "presence of at least 5 unit test cases"
     points: 20
 penalty_caps:
   formatting:
@@ -16,4 +16,4 @@ penalty_caps:
     value: -6
   casing:
     description: "the application was unable to handle case-insensitivity in inputs"
-    value: -8
+    value: -6

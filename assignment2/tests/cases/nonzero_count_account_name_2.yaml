@@ -1,0 +1,11 @@
+# Test that the accountstats count is correctly returned when there are multiple types.
+---
+points: 6
+goal: test that the accountstats count is correctly returned when there are multiple types
+compare_responses: true
+requests:
+  - request: /assignment2/austinsocialmedia?accountstats=AE
+    response_expected:
+      type: json
+      value: |
+        {"account" : "AE", "num_of_types": "6"}
