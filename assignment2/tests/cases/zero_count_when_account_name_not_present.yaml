@@ -1,6 +1,6 @@
 # Test the accountstats count is correctly returned as zero when provided an account name that doesn't exist.
 ---
-points: 5
+points: 6
 goal: test the accountstats count is correctly returned as zero when provided an account name that doesn't exist
 compare_responses: true
 requests:

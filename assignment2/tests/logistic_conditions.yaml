@@ -9,11 +9,11 @@ conditions:
     points: 20
   tests:
     description: "existence of at least 5 unit test cases"
-    points: 16
+    points: 20
 penalty_caps:
   formatting:
     description: "the response message format was not consistent with the specification"
     value: -6
   casing:
     description: "the application was unable to handle case-insensitivity in inputs"
-    value: -10
+    value: -8
