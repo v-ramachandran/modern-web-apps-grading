@@ -1,0 +1,13 @@
+---
+conditions:
+  late:
+    description: "late submission penalties"
+    points: -5
+    deadline: Sun Mar 13 23:59:59 2016
+  startup:
+    description: "successful application startup"
+    points: 20
+  tests:
+    description: "the required number of functional tests"
+    required: 4
+    points: 32
