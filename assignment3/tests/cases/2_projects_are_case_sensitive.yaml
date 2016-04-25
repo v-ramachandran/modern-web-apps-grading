@@ -1,0 +1,13 @@
+# Test that projects are case sensitive
+---
+points: 8
+goal: test that projects are case sensitive
+compare_responses: true
+requests:
+  - request: /assignment3/myeavesdrop/projects/Compass/meetings
+    response_expected:
+      type: unordered_xml
+      value: |
+        <output>
+          <error>Project Compass does not exist</error>
+        </output>

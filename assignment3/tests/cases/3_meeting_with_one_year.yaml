@@ -1,0 +1,14 @@
+# Test that a single entry is returned when there is a single meeting for the requested project
+---
+points: 8
+goal: test that a single entry is returned when there is a single meeting for the requested project
+compare_responses: true
+requests:
+  - request: /assignment3/myeavesdrop/projects/compass/meetings
+    method: GET
+    response_expected:
+      type: unordered_xml
+      value: |
+        <meetings>
+          <year>2015/</year>
+        </meetings>

@@ -1,0 +1,14 @@
+# Test that requesting for a nonexistent project returns the expected error message
+---
+points: 8
+goal: test that requesting for a nonexistent project returns the expected error message
+compare_responses: true
+requests:
+  - request: /assignment3/myeavesdrop/projects/project-does-not-exist/meetings
+    method: GET
+    response_expected:
+      type: unordered_xml
+      value: |
+        <output>
+          <error>Project project-does-not-exist does not exist</error>
+        </output>

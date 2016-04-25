@@ -1,0 +1,17 @@
+# Test that a correct response is provided for the solum_team_meeting example in the spec
+---
+points: 8
+goal: test that a correct response is provided for the solum_team_meeting example in the spec
+compare_responses: true
+requests:
+  - request: /assignment3/myeavesdrop/projects/solum_team_meeting/meetings
+    method: GET
+    response_expected:
+      type: unordered_xml
+      value: |
+        <meetings>
+          <year>2013/</year>
+          <year>2014/</year>
+          <year>2015/</year>
+          <year>2016/</year>
+        </meetings>
