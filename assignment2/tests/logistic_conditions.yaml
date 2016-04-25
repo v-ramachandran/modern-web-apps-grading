@@ -8,7 +8,8 @@ conditions:
     description: "successful application startup"
     points: 20
   tests:
-    description: "presence of at least 5 unit test cases"
+    description: "minimum number of unit test cases"
+    required: 5
     points: 20
 penalty_caps:
   formatting:
