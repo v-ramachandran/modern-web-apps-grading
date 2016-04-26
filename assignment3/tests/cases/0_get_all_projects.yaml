@@ -499,4 +499,4 @@ requests:
           <project>xen/</project>
           <project>xenapi/</project>
           <project>zaqar/</project>
-        <projects>
+        </projects>
