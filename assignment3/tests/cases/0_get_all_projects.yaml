@@ -400,6 +400,8 @@ requests:
           <project>rally/</project>
           <project>rallyrelease/</project>
           <project>random_test/</project>
+          <project>rdo/</project>
+          <project>rdo_meeting__2016_05_04_/</project>
           <project>reddwarf/</project>
           <project>refstack/</project>
           <project>release/</project>
