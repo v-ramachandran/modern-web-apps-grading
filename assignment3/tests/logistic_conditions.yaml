@@ -11,3 +11,10 @@ conditions:
     description: "the required number of functional tests"
     required: 4
     points: 32
+penalty_caps:
+  formatting:
+    description: "the response message format was not consistent with the specification"
+    value: -6
+  casing:
+    description: "the application was unable to handle case-insensitivity in inputs"
+    value: -10
