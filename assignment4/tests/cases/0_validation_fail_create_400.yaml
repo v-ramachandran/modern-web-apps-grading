@@ -1,0 +1,19 @@
+# Test that requesting for a nonexistent project returns the expected error message
+---
+points: 8
+goal: test that empty values for name and description provides a 400 error
+compare_responses: true
+requests:
+  - request: /assignment3/myeavesdrop/projects/project-does-not-exist/meetings
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name></name>
+          <description></description>
+        </project>
+    method: POST
+    response_expected:
+      status_code_expected_one_of:
+        - 400
