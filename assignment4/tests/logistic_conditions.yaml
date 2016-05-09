@@ -7,7 +7,7 @@ conditions:
   late:
     description: "late submission penalties"
     points: -5
-    deadline: Sat Apr 9 23:59:59 2016
+    deadline: Sun Apr 10 23:59:59 2016
   startup:
     description: "successful application startup"
     points: 22
@@ -15,6 +15,3 @@ penalty_caps:
   formatting:
     description: "the response message format was not consistent with the specification"
     value: -6
-  location_header_invalid:
-    description: "the location header returned was incorrect preventing access of the created resource"
-    value: -10
