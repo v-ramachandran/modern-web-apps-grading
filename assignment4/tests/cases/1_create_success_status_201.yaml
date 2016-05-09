@@ -16,4 +16,4 @@ requests:
     method: POST
     response_expected:
       status_code_expected_one_of:
-        - 400
+        - 201

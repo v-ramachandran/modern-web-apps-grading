@@ -26,8 +26,6 @@ requests:
           <name>createpostget</name>
           <description>A1_create_put_get_correct_response</description>
         </project>
-    response_expected:
-      alias_location_header_as: PROJECT_LOCATION
   - request: PROJECT_LOCATION
     method: GET
     response_expected:
