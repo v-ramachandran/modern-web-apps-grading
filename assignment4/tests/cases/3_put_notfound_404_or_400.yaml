@@ -1,0 +1,20 @@
+# Test that attempting to update a project that doesn't exist gives a 404 or 400
+---
+points: 6
+goal: test that attempting to update a project that doesn't exist gives a 404 or 400
+compare_responses: true
+requests:
+  - request: /assignment4/myeavesdrop/projects/1234567890
+    method: PUT
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name>samplename</name>
+          <description>sampledesc</description>
+        </project>
+    response_expected:
+      status_code_expected_one_of:
+        - 400
+        - 404

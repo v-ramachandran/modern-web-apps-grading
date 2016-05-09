@@ -1,0 +1,18 @@
+# Test that a successful create provides a location header in the response
+---
+points: 6
+goal: test that a successful create provides a location header in the response
+compare_responses: true
+requests:
+  - request: /assignment4/myeavesdrop/projects/
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name>createtest2</name>
+          <description>2_create_success_has_location_header</description>
+        </project>
+    response_expected:
+      has_location_header: true

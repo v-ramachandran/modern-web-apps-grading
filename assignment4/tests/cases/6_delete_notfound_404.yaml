@@ -1,0 +1,11 @@
+# Test that attempting to delete a project that doesn't exist gives a 404
+---
+points: 6
+goal: test that attempting to delete a project that doesn't exist gives a 404
+compare_responses: true
+requests:
+  - request: /assignment4/myeavesdrop/projects/1234567890
+    method: DELETE
+    response_expected:
+      status_code_expected_one_of:
+        - 404

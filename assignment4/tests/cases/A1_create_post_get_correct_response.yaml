@@ -1,0 +1,39 @@
+# Test that the retrieval of an updated project has the correct response
+---
+points: 6
+goal: test that the retrieval of an updated project has the correct response
+compare_responses: true
+requests:
+  - request: /assignment4/myeavesdrop/projects/
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name>samplename</name>
+          <description>sampledesc</description>
+        </project>
+    response_expected:
+      alias_location_header_as: PROJECT_LOCATION
+  - request: PROJECT_LOCATION
+    method: PUT
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name>createpostget</name>
+          <description>A1_create_put_get_correct_response</description>
+        </project>
+    response_expected:
+      alias_location_header_as: PROJECT_LOCATION
+  - request: PROJECT_LOCATION
+    method: GET
+    response_expected:
+      type: unordered_xml
+      value: |
+        <project>
+          <name>createpostget</name>
+          <description>A1_create_put_get_correct_response</description>
+        </project>

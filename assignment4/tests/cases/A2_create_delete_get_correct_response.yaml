@@ -1,0 +1,30 @@
+# Test that the delete of a created project removes it
+---
+points: 6
+goal: test that the delete of a created project removes it
+compare_responses: true
+requests:
+  - request: /assignment4/myeavesdrop/projects/
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name>samplename</name>
+          <description>sampledesc</description>
+        </project>
+    response_expected:
+      alias_location_header_as: PROJECT_LOCATION
+  - request: PROJECT_LOCATION
+    method: GET
+    response_expected:
+      status_code_expected_one_of:
+        - 200
+  - request: PROJECT_LOCATION
+    method: DELETE
+  - request: PROJECT_LOCATION
+    method: GET
+    response_expected:
+      status_code_expected_one_of:
+        - 404

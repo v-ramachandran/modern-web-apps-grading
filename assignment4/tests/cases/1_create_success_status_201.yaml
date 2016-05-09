@@ -1,0 +1,19 @@
+# Test that a successful create has a response status code of 201
+---
+points: 6
+goal: test that a successful create has a response status code of 201
+compare_responses: true
+requests:
+  - request: /assignment4/myeavesdrop/projects/
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name>createtest1</name>
+          <description>1_create_success_status_201</description>
+        </project>
+    method: POST
+    response_expected:
+      status_code_expected_one_of:
+        - 400

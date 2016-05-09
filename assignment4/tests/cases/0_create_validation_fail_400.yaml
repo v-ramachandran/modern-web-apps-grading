@@ -1,10 +1,10 @@
-# Test that requesting for a nonexistent project returns the expected error message
+# Test that empty values for name and description provides a 400 error
 ---
-points: 8
+points: 6
 goal: test that empty values for name and description provides a 400 error
 compare_responses: true
 requests:
-  - request: /assignment3/myeavesdrop/projects/project-does-not-exist/meetings
+  - request: /assignment4/myeavesdrop/projects/
     body:
       mime-type: application/xml
       data: |

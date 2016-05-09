@@ -1,0 +1,31 @@
+# Test that attempting to update a project with invalid name/description gives a 400
+---
+points: 6
+goal: test that attempting to update a project with invalid name/description gives a 400
+compare_responses: true
+requests:
+  - request: /assignment4/myeavesdrop/projects/
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name>samplename</name>
+          <description>sampledesc</description>
+        </project>
+    response_expected:
+      alias_location_header_as: PROJECT_LOCATION
+  - request: PROJECT_LOCATION
+    method: PUT
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name></name>
+          <description></description>
+        </project>
+    response_expected:
+      status_code_expected_one_of:
+        - 400
