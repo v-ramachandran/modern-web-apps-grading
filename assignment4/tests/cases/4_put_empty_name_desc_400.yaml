@@ -15,8 +15,8 @@ requests:
           <description>sampledesc</description>
         </project>
     response_expected:
-      alias_location_header_as: PROJECT_LOCATION
-  - request: PROJECT_LOCATION
+      alias_location_id_as: PROJECT_ID
+  - request: /assignment4/myeavesdrop/projects/PROJECT_ID
     method: PUT
     body:
       mime-type: application/xml

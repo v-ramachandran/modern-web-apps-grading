@@ -15,4 +15,5 @@ requests:
           <description>2_create_success_has_location_header</description>
         </project>
     response_expected:
-      has_location_header: true
+      alias_location_id_as: PROJECT_ID
+      location_header_expected: /assignment4/myeavesdrop/projects/PROJECT_ID

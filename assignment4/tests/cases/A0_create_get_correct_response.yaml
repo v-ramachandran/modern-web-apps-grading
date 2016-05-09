@@ -15,13 +15,13 @@ requests:
           <description>A0_create_get_correct_response</description>
         </project>
     response_expected:
-      alias_location_header_as: PROJECT_LOCATION
-  - request: PROJECT_LOCATION
+      alias_location_id_as: PROJECT_ID
+  - request: /assignment4/myeavesdrop/projects/PROJECT_ID
     method: GET
     response_expected:
       type: unordered_xml
       value: |
-        <project>
+        <project id="PROJECT_ID">
           <name>createget</name>
           <description>A0_create_get_correct_response</description>
         </project>
