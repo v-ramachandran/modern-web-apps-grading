@@ -1,0 +1,27 @@
+# Test that the retrieval of a created project has the correct response
+---
+points: 5
+goal: test that the retrieval of a created project has the correct response
+compare_responses: true
+requests:
+  - request: /assignment5/myeavesdrop/projects/
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name>createget</name>
+          <description>A0_create_get_correct_response</description>
+        </project>
+    response_expected:
+      alias_location_id_as: PROJECT_ID
+  - request: /assignment5/myeavesdrop/projects/PROJECT_ID
+    method: GET
+    response_expected:
+      type: unordered_xml
+      value: |
+        <project id="PROJECT_ID">
+          <name>createget</name>
+          <description>A0_create_get_correct_response</description>
+        </project>

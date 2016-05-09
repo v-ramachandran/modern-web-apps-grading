@@ -1,0 +1,31 @@
+# Test that 404 is returned if the associated meeting doesn't exist
+---
+points: 5
+goal: test that a 404 is returned in the associated meeting doesn't exist
+compare_responses: true
+requests:
+  - request: /assignment5/myeavesdrop/projects/
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name>p</name>
+          <description>pd</description>
+        </project>
+    response_expected:
+      alias_location_id_as: PROJECT_ID
+  - request: /assignment5/myeavesdrop/projects/PROJECT_ID/meetings/8743912875
+    method: PUT
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <meeting>
+          <name>m2</name>
+          <year>2015</year>
+        </meeting>
+    response_expected:
+      status_code_expected_one_of:
+        - 404

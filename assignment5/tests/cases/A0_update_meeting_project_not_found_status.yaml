@@ -1,0 +1,43 @@
+# Test that a 404 for a retrieve request is returned if the associated project doesn't exist
+---
+points: 5
+goal: test that a 404 for a retrieve request is returned if the associated project doesn't exist
+compare_responses: true
+requests:
+  - request: /assignment5/myeavesdrop/projects/
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name>p</name>
+          <description>pd</description>
+        </project>
+    response_expected:
+      alias_location_id_as: PROJECT_ID
+  - request: /assignment5/myeavesdrop/projects/PROJECT_ID/meetings
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <meeting>
+          <name>m</name>
+          <year>2014</year>
+        </meeting>
+    response_expected:
+      alias_location_id_as: MEETING_ID
+  - request: /assignment5/myeavesdrop/projects/1623784614/meetings/MEETING_ID
+    method: PUT
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <meeting>
+          <name>m2</name>
+          <year>2015</year>
+        </meeting>
+    response_expected:
+      status_code_expected_one_of:
+        - 404

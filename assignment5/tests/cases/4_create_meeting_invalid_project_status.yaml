@@ -1,0 +1,20 @@
+# Test that 400 or 404 is returned if the associated project doesn't exist
+---
+points: 5
+goal: test that 400 or 404 is returned if the associated project doesn't exist
+compare_responses: true
+requests:
+  - request: /assignment5/myeavesdrop/projects/31123513/meetings
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <meeting>
+          <name>m</name>
+          <year>1983</year>
+        </meeting>
+    response_expected:
+      status_code_expected_one_of:
+        - 400
+        - 404

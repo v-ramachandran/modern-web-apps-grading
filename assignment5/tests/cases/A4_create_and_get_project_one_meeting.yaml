@@ -1,0 +1,45 @@
+# Test that retrieving a project associated with one meeting provides the expected response
+---
+points: 5
+goal: test that retrieving a project associated with one meeting provides the expected response
+compare_responses: true
+requests:
+  - request: /assignment5/myeavesdrop/projects/
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name>p</name>
+          <description>pd</description>
+        </project>
+    response_expected:
+      alias_location_id_as: PROJECT_ID
+  - request: /assignment5/myeavesdrop/projects/PROJECT_ID/meetings
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <meeting>
+          <name>m</name>
+          <year>2014</year>
+        </meeting>
+    response_expected:
+      alias_location_id_as: MEETING_ID
+  - request: /assignment5/myeavesdrop/projects/PROJECT_ID
+    method: GET
+    response_expected:
+      type: unordered_xml
+      value: |
+        <project id="PROJECT_ID">
+          <name>p</name>
+          <description>pd</description>
+          <meetings>
+            <meeting id="MEETING_ID">
+              <name>m</name>
+              <year>2014</year>
+            </meeting>
+          </meetings>
+        </project>

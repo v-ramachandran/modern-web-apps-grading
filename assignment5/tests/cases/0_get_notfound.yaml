@@ -1,0 +1,11 @@
+# Test that attempting to retrieve a project that doesn't exist gives a 404
+---
+points: 5
+goal: test that attempting to retrieve a project that doesn't exist gives a 404
+compare_responses: true
+requests:
+  - request: /assignment5/myeavesdrop/projects/1234567890
+    method: GET
+    response_expected:
+      status_code_expected_one_of:
+        - 404

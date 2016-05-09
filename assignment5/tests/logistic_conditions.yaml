@@ -1,0 +1,13 @@
+---
+conditions:
+  late:
+    description: "late submission penalties"
+    points: -5
+    deadline: Sun Apr 24 23:59:59 2016
+  startup:
+    description: "successful application startup"
+    points: 20
+penalty_caps:
+  formatting:
+    description: "the response message format was not consistent with the specification"
+    value: -6

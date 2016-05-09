@@ -1,0 +1,61 @@
+# Test that deleting a project associated with two meetings successfully makes them unavailable
+---
+points: 5
+goal: test that deleting a project associated with two meetings successfully makes them unavailable
+compare_responses: true
+requests:
+  - request: /assignment5/myeavesdrop/projects/
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <project>
+          <name>p</name>
+          <description>pd</description>
+        </project>
+    response_expected:
+      alias_location_id_as: PROJECT_ID
+  - request: /assignment5/myeavesdrop/projects/PROJECT_ID/meetings
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <meeting>
+          <name>m</name>
+          <year>2014</year>
+        </meeting>
+    response_expected:
+      alias_location_id_as: MEETING_ID_A
+  - request: /assignment5/myeavesdrop/projects/PROJECT_ID/meetings
+    method: POST
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <meeting>
+          <name>m2</name>
+          <year>2015</year>
+        </meeting>
+    response_expected:
+      alias_location_id_as: MEETING_ID_B
+  - request: /assignment5/myeavesdrop/projects/PROJECT_ID
+    method: DELETE
+    response_expected:
+      status_code_expected_one_of:
+        - 200
+        - 204
+  - request: /assignment5/myeavesdrop/projects/PROJECT_ID/meetings/MEETING_ID_A
+    method: PUT
+    body:
+      mime-type: application/xml
+      data: |
+        <?xml version='1.0' encoding='utf-8'?>
+        <meeting>
+          <name>m2</name>
+          <year>2015</year>
+        </meeting>
+    response_expected:
+      status_code_expected_one_of:
+        - 404
