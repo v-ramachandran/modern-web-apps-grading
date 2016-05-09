@@ -15,3 +15,6 @@ penalty_caps:
   formatting:
     description: "the response message format was not consistent with the specification"
     value: -6
+  location_header_invalid:
+    description: "the location header returned was incorrect preventing access of the created resource"
+    value: -10
