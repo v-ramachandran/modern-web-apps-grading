@@ -25,3 +25,10 @@ requests:
           <name>createget</name>
           <description>A0_create_get_correct_response</description>
         </project>
+      acceptable_values:
+        - |
+          <project id="PROJECT_ID">
+            <name>createget</name>
+            <description>A0_create_get_correct_response</description>
+            <meetings/>
+          </project>
