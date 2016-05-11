@@ -1,0 +1,4 @@
+# Verify that the application produces correct counts for meetings
+---
+points: 20
+goal: verify that the application produces correct counts for meetings

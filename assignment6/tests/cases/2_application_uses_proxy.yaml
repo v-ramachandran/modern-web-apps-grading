@@ -1,0 +1,4 @@
+# Verify that the web application uses a proxy for calculating information from Openstack
+---
+points: 20
+goal: verify that the web application uses a proxy for calculating information from Openstack

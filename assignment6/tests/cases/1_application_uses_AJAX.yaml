@@ -1,0 +1,4 @@
+# Verify that the web application uses Javascript to communicate and retrieve statistics
+---
+points: 30
+goal: verify that the web application uses Javascript to communicate and retrieve statistics
